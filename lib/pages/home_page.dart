@@ -5,9 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Holaa")),
-      body: Container(
+    return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/Background_App.png"),
@@ -24,32 +22,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            SizedBox(
-              height: 100,
-              child: DrawerHeader(
-                child: Text("Barra Lateral"),
-              ),
-            ),
-            ListTile(
-              title: Text("Bienvenido"),
-              onTap: () {
-                
-              },
-            ),
-            ListTile(
-              title: Text("Porfolio"),
-              onTap: () {
-                
-              },
-            )
-          ],
-        ),
-      ),
-    );
+      );
   }
 }

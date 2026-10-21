@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_canario/pages/home_page.dart';
+import 'package:proyecto_canario/pages/main_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Proyecto Canario",
-      home: HomePage()
+      home: MainPage(),
     );
   }
 }
