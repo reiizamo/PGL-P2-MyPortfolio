@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_canario/pages/demo_page.dart';
 import 'package:proyecto_canario/pages/home_page.dart';
+import 'package:proyecto_canario/widgets/drawer_item.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -38,22 +39,16 @@ class _MainPageState extends State<MainPage> {
                 child: Text("Barra Lateral")
               ),
             ),
-            ListTile(
-              title: Text("Bienvenido"),
-              selected: _selectedIndex == 0,
-              onTap:() {
-                _onItemTapped(0, "Holaaa");
-                Navigator.pop(context);
-              },
+            DrawerItem(
+              title: "Bienvenido", 
+              selected: _selectedIndex == 0, 
+              onTap: () => _onItemTapped(0, "Holaaa")
             ),
-            ListTile(
-              title: Text("Porfolio"),
-              selected: _selectedIndex == 1,
-              onTap: () {
-                _onItemTapped(1, "PROfolio");
-                Navigator.pop(context);
-              },
-            )
+            DrawerItem(
+              title: "Porfolio", 
+              selected: _selectedIndex == 1, 
+              onTap: () => _onItemTapped(1, "PROfolio")
+            ),
           ],
         ),
       ),
