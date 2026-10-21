@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_canario/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -7,26 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Proyecto Canario",
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/Background_App.png"),
-              fit: BoxFit.cover
-            )
-          ),
-          child: const Center(
-            child: Text(
-              "Bienvenido", 
-              style: TextStyle(
-                color: Colors.white, 
-                fontSize: 50,
-                fontWeight:FontWeight(800)
-                ),
-              ),
-            ),
-        ),
-      )
+      home: HomePage()
     );
   }
 }
