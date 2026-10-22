@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:proyecto_canario/pages/porfolio_page.dart';
 import 'package:proyecto_canario/pages/home_page.dart';
 import 'package:proyecto_canario/widgets/drawer_item.dart';
+import 'package:proyecto_canario/config/page_config.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key, required this.child, required this.location});
@@ -10,14 +11,9 @@ class MainPage extends StatelessWidget {
   final Widget child;
   final String location;
 
-  static const Map<String, String> _titles = {
-    '/': 'Bienvenido',
-    '/porfolio': 'PROfolio',
-  };
-
   @override
   Widget build(BuildContext context) {
-    final config = pageConfigs[location] ?? pageConfigs['/'];
+    final config = pageConfigs[location] ?? pageConfigs['/']!;
 
     return Scaffold(
       appBar: AppBar(
