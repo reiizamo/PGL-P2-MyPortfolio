@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:proyecto_canario/pages/porfolio_page.dart';
-import 'package:proyecto_canario/pages/home_page.dart';
 import 'package:proyecto_canario/widgets/drawer_item.dart';
 import 'package:proyecto_canario/config/page_config.dart';
 
@@ -58,27 +56,4 @@ class MainPage extends StatelessWidget {
     );
   }
   
-}
-
-class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
-  String _appbarText = "Holaaa";
-  Color _appbarColor = Colors.white;
-  Color _textColor = Colors.black;
-
-  static const List<Widget> _pages = [
-    HomePage(),
-    PorfolioPage()
-  ];
-
-  void _onItemTapped(int index, String text, Color appColor, Color textColor) {
-    setState((){
-      _selectedIndex = index;
-      _appbarText = text;
-      _appbarColor = appColor;
-      _textColor = textColor;
-    });
-  }
-
-  @override
 }
