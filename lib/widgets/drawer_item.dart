@@ -19,8 +19,8 @@ class DrawerItem extends StatelessWidget {
       title: Text(title),
       selected: selected,
       onTap: () {
-        onTap();
         Navigator.pop(context);
+        onTap();
       },
     );
   }
