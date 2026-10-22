@@ -17,20 +17,23 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = pageConfigs[location] ?? pageConfigs['/'];
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: _appbarColor,
+        backgroundColor: config.appBarColor,
         title: Center(
           child: Text(
-            _titles[location] ?? '',
+            config.title,
             style: TextStyle(
               fontSize: 20,
-              color: _textColor,
+              color: config.textColor,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.none,
             ),
           ),
         ),
+        iconTheme: IconThemeData(color: config.textColor),
       ),
       body: child,
       drawer: Drawer(
