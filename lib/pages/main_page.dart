@@ -1,12 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:proyecto_canario/pages/porfolio_page.dart';
 import 'package:proyecto_canario/pages/home_page.dart';
 import 'package:proyecto_canario/widgets/drawer_item.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class MainPage extends StatelessWidget {
+  const MainPage({super.key, required this.child, required this.location});
+
+  final Widget child;
+  final String location;
+
+  static const Map<String, String> _titles = {
+    '/': 'Bienvenido',
+    '/porfolio': 'PROfolio',
+  };
+
   @override
-  State<MainPage> createState() => _MainPageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: _appbarColor,
+        title: Center(
+          child: Text(
+            _titles[location] ?? '',
+            style: TextStyle(
+              fontSize: 20,
+              color: _textColor,
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.none,
+            ),
+          ),
+        ),
+      ),
+      body: child,
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            SizedBox(
+              height: 100,
+              child: DrawerHeader(
+                child: Text("Barra Lateral")
+              ),
+            ),
+            DrawerItem(
+              title: "Bienvenido", 
+              selected: location == '/',
+              onTap: () => context.go('/')
+            ),
+            DrawerItem(
+              title: "Porfolio", 
+              selected: location == '/porfolio', 
+              onTap: () => context.go('/porfolio')
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  
 }
 
 class _MainPageState extends State<MainPage> {
@@ -30,46 +82,4 @@ class _MainPageState extends State<MainPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: _appbarColor,
-        title: Center(
-          child: Text(
-            _appbarText,
-            style: TextStyle(
-              fontSize: 20,
-              color: _textColor,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.none,
-            ),
-          ),
-        ),
-      ),
-      body: _pages[_selectedIndex],
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            SizedBox(
-              height: 100,
-              child: DrawerHeader(
-                child: Text("Barra Lateral")
-              ),
-            ),
-            DrawerItem(
-              title: "Bienvenido", 
-              selected: _selectedIndex == 0, 
-              onTap: () => _onItemTapped(0, "Holaaa", Colors.white, Colors.black)
-            ),
-            DrawerItem(
-              title: "Porfolio", 
-              selected: _selectedIndex == 1, 
-              onTap: () => _onItemTapped(1, "PROfolio", Colors.purple, Colors.white)
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
