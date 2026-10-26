@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_canario/widgets/info_box.dart';
 
 class PorfolioPage extends StatefulWidget {
   const PorfolioPage({super.key});
@@ -20,6 +21,7 @@ class _PorfolioPageState extends State<PorfolioPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        InfoBox(index: _index),
         Expanded(child: _tabs[_index]),
         NavigationBar(
           selectedIndex: _index,
