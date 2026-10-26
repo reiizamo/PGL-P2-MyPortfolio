@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_canario/pages/tabs/hobbies.dart';
+import 'package:proyecto_canario/pages/tabs/repository.dart';
 import 'package:proyecto_canario/widgets/info_box.dart';
 
 class PorfolioPage extends StatefulWidget {
@@ -27,7 +28,7 @@ class _PorfolioPageState extends State<PorfolioPage> {
 
   static const List<Widget> _tabs = [
     Hobbies(hobbies: _hobbies),
-    Center(child: Text("Samuel"),),
+    Repository(),
   ];
 
   @override

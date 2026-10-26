@@ -10,6 +10,7 @@ class InfoBox extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
+      margin: EdgeInsets.only(bottom: 40),
       height: height * 0.15,
       width: width,
       color: Colors.grey[200],
