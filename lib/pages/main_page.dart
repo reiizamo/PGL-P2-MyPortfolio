@@ -14,6 +14,7 @@ class MainPage extends StatelessWidget {
     final config = pageConfigs[location] ?? pageConfigs['/']!;
 
     return Scaffold(
+      extendBodyBehindAppBar: config.boolean,
       appBar: AppBar(
         backgroundColor: config.appBarColor,
         title: Center(
