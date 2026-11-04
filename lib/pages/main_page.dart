@@ -51,6 +51,11 @@ class MainPage extends StatelessWidget {
               selected: location == '/porfolio', 
               onTap: () => context.go('/porfolio')
             ),
+            DrawerItem(
+              title: "Deportes", 
+              selected: location == '/deportes', 
+              onTap: () => context.go('/deportes')
+            ),
           ],
         ),
       ),

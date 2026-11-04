@@ -26,6 +26,12 @@ const Map<String, PageConfig> pageConfigs = {
     appBarColor: Colors.purple,
     textColor: Colors.white,
     boolean: false
+  ),
+  '/deportes': PageConfig(
+    title: '',
+    appBarColor: Colors.transparent,
+    textColor: Colors.white,
+    boolean: true
   )
 
 };
