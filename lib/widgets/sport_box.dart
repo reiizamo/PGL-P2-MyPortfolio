@@ -5,11 +5,13 @@ class SportBox extends StatelessWidget {
   final String name;
   final String description;
   final String category;
+  final VoidCallback onDelete;
 
   SportBox({super.key, 
                   required this.name, 
                   required this.description,
-                  required this.category
+                  required this.category,
+                  required this.onDelete
   });
 
   final Map<String, String> images = {
@@ -30,13 +32,28 @@ class SportBox extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            images[category.toLowerCase()] ?? 'assets/images/default.png',
-            width: 200, 
-            height: 130, 
-            fit: BoxFit.cover,
-            color: const Color.fromRGBO(255, 255, 255, 0.3), // #220026
-            colorBlendMode: BlendMode.modulate,
+          Stack(
+            children: [
+              Image.asset(
+                images[category.toLowerCase()] ?? 'assets/images/default.png',
+                width: 200, 
+                height: 130, 
+                fit: BoxFit.cover,
+                color: const Color.fromRGBO(255, 255, 255, 0.3), // #220026
+                colorBlendMode: BlendMode.modulate,
+              ),
+              Positioned(
+                top: 5,
+                right: 5,
+                child: IconButton(
+                  onPressed: onDelete, 
+                  icon: Icon(
+                    Icons.delete,
+                    color: Colors.white,
+                  ),
+                ),
+              )
+            ],
           ),
           Padding(
             padding: EdgeInsets.only(left: 5),
