@@ -23,7 +23,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/Background_App.png
+    - assets/images/Background_App_Sports.png
     - assets/images/mono.png
     - assets/images/mono2.jpg
     - assets/images/zen_browser.png
-
+    - assets/images/boxeo.png
+    - assets/images/atletismo.png
+    - assets/images/esgrima.png
+    - assets/images/kendo.png
+    - assets/images/voleybol.png
+    
