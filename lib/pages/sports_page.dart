@@ -44,6 +44,17 @@ class SportsPage extends StatefulWidget {
       ),
       child: Column(
         children: [
+          Padding(
+            padding: const EdgeInsetsGeometry.all(15),
+            child: Text(
+              'Clubes añadidos: ${sports.length}',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ), 
+          ),
           Expanded(
             child: GridView.count(
               crossAxisCount: 2,
