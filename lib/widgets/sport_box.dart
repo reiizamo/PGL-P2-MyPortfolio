@@ -6,11 +6,19 @@ class SportBox extends StatelessWidget {
   final String description;
   final String category;
 
-  const SportBox({super.key, 
+  SportBox({super.key, 
                   required this.name, 
                   required this.description,
                   required this.category
-                });
+  });
+
+  final Map<String, String> images = {
+    'boxeo': 'assets/images/boxeo.png',
+    'atletismo': 'assets/images/atletismo.png',
+    'esgrima': 'assets/images/esgrima.png',
+    'kendo': 'assets/images/kendo.png',
+    'voleibol': 'assets/images/voleybol.png',
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class SportBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            'assets/images/kendo.png', 
+            images[category.toLowerCase()] ?? 'assets/images/default.png',
             width: 200, 
             height: 130, 
             fit: BoxFit.cover,
