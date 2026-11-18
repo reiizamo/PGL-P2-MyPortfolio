@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:proyecto_canario/pages/tabs/hobbies.dart';
 import 'package:proyecto_canario/pages/tabs/repository.dart';
 import 'package:proyecto_canario/widgets/info_box.dart';

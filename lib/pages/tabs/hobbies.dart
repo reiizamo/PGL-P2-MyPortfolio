@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:proyecto_canario/widgets/hobbie_box.dart';
 
 class Hobbies extends StatelessWidget {
