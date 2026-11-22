@@ -57,5 +57,7 @@ flutter run
 ![Página de hobbies](assets/images/readme/Hobbies.png)
 ![Página de repo](assets/images/readme/Repo.png)
 ![Página de crud](assets/images/readme/Crud.png)
- 
-
+![Un registro exitoso](assets/images/readme/Registrado_con_existo.png)
+![Un login fallido](assets/images/readme/Login_Fallido.png)
+![Un login exitoso](assets/images/readme/Login_Exitoso.png)
+![Mensaje de bienvenida](assets/images/readme/Mensaje_Bienvenida.png)
