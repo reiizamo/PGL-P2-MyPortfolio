@@ -41,7 +41,7 @@ class AuthService {
         body: jsonEncode({'email': email, 'pwd': password}),
       )
     );
-    if (response.statusCode != 201) throw _errorFrom(response);
+    if (response.statusCode < 200 || response.statusCode >= 300) throw _errorFrom(response);
     
     final body = jsonDecode(utf8.decode(response.bodyBytes));
     final token = body is Map<String, dynamic> ? body['token'] : null;
