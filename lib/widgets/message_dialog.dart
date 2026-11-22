@@ -12,5 +12,5 @@ Future<void> showMessageDialog(BuildContext context, String message){
         )
       ],
     )
-  )
+  );
 }
